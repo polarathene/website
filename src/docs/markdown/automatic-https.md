@@ -15,7 +15,6 @@ Here's a 28-second video showing how it works:
 <iframe width="100%" height="480" src="https://www.youtube-nocookie.com/embed/nk4EWHvvZtI?rel=0" frameborder="0" allowfullscreen=""></iframe>
 
 
-
 ## Overview
 
 **Caddy serves all sites over HTTPS by default.**
@@ -44,7 +43,6 @@ Provided that [auto-HTTPS activates](/docs/automatic-https#activation), Caddy ke
 then sites will be served over HTTPS automatically and without problems. You won't have to know or do anything else about it. It should "just work"!
 
 If you are still testing your setup, however, please read on or you risk being rate limited by your CA. The rest of this page goes over the details for advanced use cases and troubleshooting purposes.
-
 
 
 ## Activation
@@ -77,7 +75,6 @@ Automatic HTTPS never overrides explicit configuration.
 You can [customize or disable automatic HTTPS](/docs/json/apps/http/servers/automatic_https/) if necessary.
 
 
-
 ## Hostname requirements
 
 All hostnames (domain names and IP addresses) qualify for fully-managed certificates if they:
@@ -91,7 +88,6 @@ In addition, hostnames qualify for publicly-trusted certificates if they:
 - are not localhost
 - are not an IP address
 - have only a single wildcard `*` as the left-most label
-
 
 
 ## Local HTTPS
@@ -120,9 +116,6 @@ After Caddy's root CA is installed, you will see it in your local trust store as
 An intermediate certificate and key will also be generated, which will be used for signing leaf (individual site) certificates.
 
 Unlike the root certificate, intermediate certificates have a much shorter lifetime and will automatically be renewed as needed.
-
-
-
 
 
 ## Testing
@@ -213,7 +206,6 @@ Caddy will store public certificates, private keys, and other assets in its [con
 Any Caddy instances that are configured to use the same storage will automatically share those resources and coordinate certificate management as a cluster.
 
 Before attempting any ACME transactions, Caddy will test the configured storage to ensure it is writeable and has sufficient capacity. This helps reduce unnecessary rate limit contention.
-
 
 
 ## Wildcard certificates
