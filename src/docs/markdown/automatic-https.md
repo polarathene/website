@@ -23,7 +23,7 @@ Here's a 28-second video showing how it works:
 - Caddy serves IP addresses and local/internal hostnames over HTTPS with locally-trusted certificates. Examples: `localhost`, `127.0.0.1`.
 - Caddy serves public DNS names over HTTPS with certificates from [Let's Encrypt](https://letsencrypt.org). Examples: `example.com`, `sub.example.com`, `*.example.com`.
 
-Caddy keeps all certificates renewed, and redirects HTTP (default port 80) to HTTPS (default port 443) automatically, provided that [activation](/docs/automatic-https#activation) is successful.
+Provided that [auto-HTTPS activates](/docs/automatic-https#activation), Caddy keeps all certificates renewed, and redirects HTTP (default port 80) to HTTPS (default port 443) automatically.
 
 **For local HTTPS:**
 
@@ -76,7 +76,6 @@ Automatic HTTPS never overrides explicit configuration.
 
 You can [customize or disable automatic HTTPS](/docs/json/apps/http/servers/automatic_https/) if necessary.
 
-<aside class="tip">Disabling redirects keeps the HTTPS port enabled as the default port implicitly assigned to an address. The HTTP port is only bound for redirects and for the ACME HTTP challenge. If you need to serve over HTTP, you must explicitly configure Caddy to do it. [See the examples](/docs/automatic-https#examples).</aside>
 
 
 ## Hostname requirements
